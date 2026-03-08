@@ -143,3 +143,74 @@ http://localhost:3000
 ```
 
 You should see the **Restauranty dashboard interface**, which communicates with the backend microservices and MongoDB database.
+
+---
+
+## Troubleshooting
+
+During the local setup, the following issues were encountered and resolved.
+
+### 1. Node.js Version Compatibility
+
+Initially the application failed with syntax errors when starting the services.
+
+Example error:
+
+```bash
+SyntaxError: Unexpected token '.'
+```
+
+Cause:
+The system was running **Node.js v12**, which does not support modern JavaScript features such as **optional chaining (`?.`)** used by some dependencies (e.g., mongoose).
+
+Solution: Upgrade Node.js to a newer version.
+
+```bash
+node -v
+nvm install 20
+nvm use 20
+```
+
+---
+
+### 2. Dependency Compatibility Issues
+
+After upgrading Node.js, some dependencies required a fresh installation to ensure compatibility with the newer runtime.
+
+Solution: Remove existing dependencies and reinstall them.
+
+```bash
+rm -rf node_modules package-lock.json
+npm install
+```
+
+This ensures all packages are rebuilt against the correct Node.js version.
+
+---
+
+### 3. Missing Environment Variables
+
+While starting the authentication service, the following error occurred:
+
+```bash
+RangeError: express-jwt: `secret` is a required option
+```
+
+Cause:
+The application expected environment variables that were not provided.
+
+Solution: Create a `.env` file from the provided template.
+
+```bash
+cp .env.example .env
+```
+
+This file contains required configuration values such as:
+
+```bash
+SECRET
+MONGODB_URI
+PORT
+```
+
+These variables allow the service to connect to MongoDB and properly configure authentication.

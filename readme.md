@@ -11,8 +11,7 @@ The original application consists of **Node.js microservices + React frontend + 
 
 Overview of the system architecture including microservices, frontend, database, and infrastructure components.
 
-📄 Detailed documentation:
-[Architecture Details](docs/architecture.md)
+📄 [Architecture Details](docs/architecture.md)
 
 ---
 
@@ -20,8 +19,7 @@ Overview of the system architecture including microservices, frontend, database,
 
 Instructions to run the application locally for development and testing.
 
-📄 Detailed documentation:
-[Local Setup Guide](docs/local-setup.md)
+📄 [Local Setup Guide](docs/local-setup.md)
 
 ---
 
@@ -29,8 +27,7 @@ Instructions to run the application locally for development and testing.
 
 Containerization of all services using Docker and orchestration using Docker Compose.
 
-📄 Detailed documentation:
-[Docker Setup](docs/docker.md)
+📄 [Docker Setup](docs/docker.md)
 
 ---
 
@@ -38,8 +35,7 @@ Containerization of all services using Docker and orchestration using Docker Com
 
 Deployment of all services using Kubernetes including deployments, services, and ingress routing.
 
-📄 Detailed documentation:
-[Kubernetes Deployment](docs/kubernetes.md)
+📄 [Kubernetes Deployment](docs/kubernetes.md)
 
 ---
 
@@ -47,8 +43,7 @@ Deployment of all services using Kubernetes including deployments, services, and
 
 Automated build and deployment pipeline implemented using GitHub Actions.
 
-📄 Detailed documentation:
-[CI/CD Pipeline](docs/ci-cd.md)
+📄 [CI/CD Pipeline](docs/ci-cd.md)
 
 ---
 
@@ -56,8 +51,7 @@ Automated build and deployment pipeline implemented using GitHub Actions.
 
 Monitoring and observability setup using tools such as Prometheus and Grafana.
 
-📄 Detailed documentation:
-[Monitoring Setup](docs/monitoring.md)
+📄 [Monitoring Setup](docs/monitoring.md)
 
 ---
 
@@ -65,5 +59,4 @@ Monitoring and observability setup using tools such as Prometheus and Grafana.
 
 Security best practices including secret management, authentication handling, and infrastructure protection.
 
-📄 Detailed documentation:
-[Security Guide](docs/security.md)
+📄 [Security Guide](docs/security.md)

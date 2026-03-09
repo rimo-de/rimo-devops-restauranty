@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: items-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: items
+  template:
+    metadata:
+      labels:
+        app: items
+    spec:
+      containers:
+        - name: items
+          image: rimo9docker/rimo-restauranty-items:latest
+          ports:
+            - containerPort: 3003
+          env:
+            - name: PORT
+              value: "3003"
+            - name: SECRET
+              value: "MySecret1!"
+            - name: MONGODB_URI
+              value: "mongodb+srv://mongo-user:Berlin09@mongodb.plxma3m.mongodb.net/resturanty?retryWrites=true&w=majority"
+            - name: CLOUD_NAME
+              value: "dummy"
+            - name: CLOUD_API_KEY
+              value: "dummy"
+            - name: CLOUD_API_SECRET
+              value: "dummy"

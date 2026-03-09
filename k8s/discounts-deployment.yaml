@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: discounts-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: discounts
+  template:
+    metadata:
+      labels:
+        app: discounts
+    spec:
+      containers:
+        - name: discounts
+          image: rimo9docker/rimo-restauranty-discounts:latest
+          ports:
+            - containerPort: 3002
+          env:
+            - name: PORT
+              value: "3002"
+            - name: SECRET
+              value: "MySecret1!"
+            - name: MONGODB_URI
+              value: "mongodb+srv://mongo-user:Berlin09@mongodb.plxma3m.mongodb.net/resturanty?retryWrites=true&w=majority"
+            - name: CLOUD_NAME
+              value: "dummy"
+            - name: CLOUD_API_KEY
+              value: "dummy"
+            - name: CLOUD_API_SECRET
+              value: "dummy"

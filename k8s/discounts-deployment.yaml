@@ -23,7 +23,10 @@ spec:
             - name: SECRET
               value: "MySecret1!"
             - name: MONGODB_URI
-              value: "mongodb+srv://mongo-user:Berlin09@mongodb.plxma3m.mongodb.net/resturanty?retryWrites=true&w=majority"
+              valueFrom:
+              secretKeyRef:
+                name: mongo-secret
+                key: MONGO_URI
             - name: CLOUD_NAME
               value: "dummy"
             - name: CLOUD_API_KEY

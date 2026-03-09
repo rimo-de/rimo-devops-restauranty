@@ -24,9 +24,9 @@ spec:
               value: "MySecret1!"
             - name: MONGODB_URI
               valueFrom:
-              secretKeyRef:
-                name: mongo-secret
-                key: MONGO_URI
+                secretKeyRef:
+                  name: mongo-secret
+                  key: MONGO_URI
             - name: CLOUD_NAME
               value: "dummy"
             - name: CLOUD_API_KEY

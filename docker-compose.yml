@@ -1,0 +1,89 @@
+version: "3.9"
+
+services:
+  mongo:
+    image: mongo:latest
+    container_name: restaurant-mongo
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+  auth:
+    build:
+      context: .
+      dockerfile: docker/auth/Dockerfile
+    container_name: restaurant-auth
+    environment:
+      PORT: 3001
+      SECRET: MySecret1!
+      MONGODB_URI: mongodb://mongo:27017/resturanty
+      CLOUD_NAME: dummy
+      CLOUD_API_KEY: dummy
+      CLOUD_API_SECRET: dummy
+    depends_on:
+      - mongo
+    ports:
+      - "3001:3001"
+
+  discounts:
+    build:
+      context: .
+      dockerfile: docker/discounts/Dockerfile
+    container_name: restaurant-discounts
+    environment:
+      PORT: 3002
+      SECRET: MySecret1!
+      MONGODB_URI: mongodb://mongo:27017/resturanty
+      CLOUD_NAME: dummy
+      CLOUD_API_KEY: dummy
+      CLOUD_API_SECRET: dummy
+    depends_on:
+      - mongo
+    ports:
+      - "3002:3002"
+
+  items:
+    build:
+      context: .
+      dockerfile: docker/items/Dockerfile
+    container_name: restaurant-items
+    environment:
+      PORT: 3003
+      SECRET: MySecret1!
+      MONGODB_URI: mongodb://mongo:27017/resturanty
+      CLOUD_NAME: dummy
+      CLOUD_API_KEY: dummy
+      CLOUD_API_SECRET: dummy
+    depends_on:
+      - mongo
+    ports:
+      - "3003:3003"
+
+  client:
+    build:
+      context: .
+      dockerfile: docker/client/Dockerfile
+    container_name: restaurant-client
+    depends_on:
+      - auth
+      - discounts
+      - items
+    ports:
+      - "3000:80"
+
+  haproxy:
+    image: haproxy:2.9
+    container_name: restaurant-haproxy
+    depends_on:
+      - client
+      - auth
+      - discounts
+      - items
+    ports:
+      - "8080:80"
+    volumes:
+      - ./app/haproxy.cfg:/usr/local/etc/haproxy/haproxy.cfg:ro
+
+volumes:
+  mongo-data:

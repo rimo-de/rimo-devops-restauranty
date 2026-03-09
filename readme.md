@@ -12,8 +12,8 @@ The original application consists of **Node.js microservices + React frontend + 
 | Topic                     | Detailed Explanation                                                                                           | Documentation                               |
 | ------------------------- | -------------------------------------------------------------------------------------------------------------- | ------------------------------------------- |
 | **Project Architecture**  | Overview of the system architecture including microservices, frontend, database, and infrastructure components | [Architecture Details](app/architecture.md) |
-| **Local Setup**           | Instructions to run the application locally for development and testing                                        | [Local Setup Guide](docs/local-setup.md)    |
-| **HA-Proxy Setup**        | This simulates how production environments route traffic to multiple services                                  | [Local Setup Guide](docs/HAproxy-setup.md)  |
+| **Local Setup**           | Instructions to run the application locally for development and testing                                        | [Local Setup](docs/local-setup.md)          |
+| **HA-Proxy Setup**        | This simulates how production environments route traffic to multiple services                                  | [HA Proxy Setup](docs/HAproxy-setup.md)     |
 | **Docker Usage**          | Containerization of all services using Docker and orchestration using Docker Compose                           | [Docker Setup](docs/docker.md)              |
 | **Kubernetes Deployment** | Deployment of all services using Kubernetes including deployments, services, and ingress routing               | [Kubernetes Deployment](docs/kubernetes.md) |
 | **CI/CD Pipeline**        | Automated build and deployment pipeline implemented using GitHub Actions                                       | [CI/CD Pipeline](docs/ci-cd.md)             |

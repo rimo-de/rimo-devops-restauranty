@@ -12,6 +12,8 @@ Make sure the following tools are installed:
 - **Docker** – used to run MongoDB locally without installing it directly on your machine.
 - **HAProxy (optional)** – used later to route requests through a single entry point.
 
+![Check pre-requisites](../img/Local-run-1.png)
+
 ---
 
 ## Start MongoDB
@@ -34,6 +36,10 @@ MongoDB will now be available at:
 ```bash
 mongodb://localhost:27017
 ```
+
+![Mongo Docker](../img/Local-run-2.png)
+
+![Mongo DB Image](../img/Local-run-3.png)
 
 ---
 
@@ -71,6 +77,8 @@ Server listening on http://localhost:3001
 Connected to Mongo
 ```
 
+![Auth Service](../img/Local-run-4.png)
+
 ---
 
 ## Start Discounts Service
@@ -88,7 +96,7 @@ This service runs on:
 http://localhost:3002
 ```
 
-It manages coupon codes and promotional campaigns.
+![Discount Service](../img/Local-run-5.png)
 
 ---
 
@@ -107,7 +115,7 @@ This service runs on:
 http://localhost:3003
 ```
 
-It manages restaurant menu items and related data.
+![Item Service](../img/Local-run-6.png)
 
 ---
 
@@ -132,6 +140,8 @@ The frontend will run on:
 http://localhost:3000
 ```
 
+![Frontend Service](../img/Local-run-7.png)
+
 ---
 
 ## Access the Application
@@ -143,6 +153,8 @@ http://localhost:3000
 ```
 
 You should see the **Restauranty dashboard interface**, which communicates with the backend microservices and MongoDB database.
+
+![Application](../img/Local-run-8.png)
 
 ---
 

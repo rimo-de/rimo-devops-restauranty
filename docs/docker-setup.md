@@ -101,7 +101,7 @@ docker compose up -d haproxy --force-recreate
 
 Once the stack was started successfully, all containers were running as expected.
 
-````bash
+```bash
 docker compose ps
 ```
 
@@ -123,6 +123,4 @@ curl -I http://localhost:8080
 
 ![Docker Setup 9](../img/Docker-setup-9.png)
 
-This confirms that HAProxy is routing requests correctly to the frontend and backend services inside the Docker network.
-
-````
+This confirms that HAProxy is routing requests correctly to the frontend and backend services inside the Docker network

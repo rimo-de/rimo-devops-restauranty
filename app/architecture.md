@@ -4,7 +4,7 @@ A restaurant management platform built with a **microservices architecture**: 3 
 
 ## Architecture
 
-```
+```bash
                          ┌────────────────────────┐
                          │   HAProxy / Ingress    │
     Browser ───────────► │       (port 80)        │
@@ -29,12 +29,12 @@ A restaurant management platform built with a **microservices architecture**: 3 
 
 ## Microservices
 
-| Service | Port | Path | Responsibilities |
-|---------|------|------|-----------------|
-| **Auth** | 3001 | `/api/auth/*` | User signup, login, JWT authentication |
-| **Discounts** | 3002 | `/api/discounts/*` | Coupon and campaign management |
-| **Items** | 3003 | `/api/items/*` | Menu items, dietary categories, orders |
-| **Frontend** | 3000 | `/` | React SPA (admin dashboard) |
+| Service       | Port | Path               | Responsibilities                       |
+| ------------- | ---- | ------------------ | -------------------------------------- |
+| **Auth**      | 3001 | `/api/auth/*`      | User signup, login, JWT authentication |
+| **Discounts** | 3002 | `/api/discounts/*` | Coupon and campaign management         |
+| **Items**     | 3003 | `/api/items/*`     | Menu items, dietary categories, orders |
+| **Frontend**  | 3000 | `/`                | React SPA (admin dashboard)            |
 
 ## Quick Start
 
@@ -76,14 +76,14 @@ Access the app at **http://localhost/**
 
 Each microservice uses the same set of environment variables (see `.env.example` in each service folder):
 
-| Variable | Description | Example |
-|----------|-------------|---------|
-| `SECRET` | JWT signing key | `MySecret1!` |
-| `MONGODB_URI` | MongoDB connection string | `mongodb://127.0.0.1:27017/restauranty` |
-| `CLOUD_NAME` | Cloudinary cloud name | _(ask instructor)_ |
-| `CLOUD_API_KEY` | Cloudinary API key | _(ask instructor)_ |
-| `CLOUD_API_SECRET` | Cloudinary API secret | _(ask instructor)_ |
-| `PORT` | Service port | `3001` / `3002` / `3003` |
+| Variable           | Description               | Example                                 |
+| ------------------ | ------------------------- | --------------------------------------- |
+| `SECRET`           | JWT signing key           | `MySecret1!`                            |
+| `MONGODB_URI`      | MongoDB connection string | `mongodb://127.0.0.1:27017/restauranty` |
+| `CLOUD_NAME`       | Cloudinary cloud name     | _(ask instructor)_                      |
+| `CLOUD_API_KEY`    | Cloudinary API key        | _(ask instructor)_                      |
+| `CLOUD_API_SECRET` | Cloudinary API secret     | _(ask instructor)_                      |
+| `PORT`             | Service port              | `3001` / `3002` / `3003`                |
 
 For the frontend, use the `REACT_APP_` prefix: `REACT_APP_API_URL=http://localhost:80`
 

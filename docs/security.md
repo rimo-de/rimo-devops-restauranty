@@ -44,6 +44,10 @@ env:
   key: MONGO_URI
 ```
 
+![Mongo DB](img/Kubernetes-10.png)
+
+![Mongo DB URI](img/Kubernetes-11.png)
+
 ---
 
 ## 3. Verify Secret in Kubernetes
